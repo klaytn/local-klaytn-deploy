@@ -1,5 +1,19 @@
 # Local Deployment Tool for Klaytn
 
+<!-- vim-markdown-toc GFM -->
+
+* [Deploying the local Network](#deploying-the-local-network)
+  * [Prerequisites](#prerequisites)
+  * [Starting the Klaytn Network](#starting-the-klaytn-network)
+  * [Getting logs](#getting-logs)
+  * [Stopping the Network](#stopping-the-network)
+  * [Resuming the Network](#resuming-the-network)
+  * [Terminate the Network](#terminate-the-network)
+* [Developing Smart Contracts on the Local Network](#developing-smart-contracts-on-the-local-network)
+  * [Using KlaytnIDE](#using-klaytnide)
+
+<!-- vim-markdown-toc -->
+
 # Deploying the local Network
 
 ## Prerequisites
