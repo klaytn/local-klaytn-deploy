@@ -23,6 +23,9 @@ if [ ! -z $PRIVATE_KEY ]; then
 	sed -ie "s/\(.*REWARDBASE=\)\(.*\)\(\'.*\)/\1$ADDRESS\3/" docker-compose.yml
 fi
 
+# add eth namespace in docker-compose.yml
+sed -ie "s/RPC_API=\"db,klay,/RPC_API=\"db,eth,klay,/" docker-compose.yml
+
 # Add the whale account to the node wallet.
 PK=`grep "nodekeyhex" docker-compose.yml | sed "s/.*nodekeyhex \(.*\)\".*/\1/"`
 REWARDBASE=`grep "REWARDBASE" docker-compose.yml | sed "s/.*REWARDBASE=\(.*\)\'.*/\1/"`
