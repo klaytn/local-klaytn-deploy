@@ -25,7 +25,7 @@ fi
 
 # add eth namespace in docker-compose.yml
 sed -ie "s/RPC_API=\"db,klay,/RPC_API=\"db,eth,klay,/" docker-compose.yml
-
+cat docker-compose.yaml
 # Add the whale account to the node wallet.
 PK=`grep "nodekeyhex" docker-compose.yml | sed "s/.*nodekeyhex \(.*\)\".*/\1/"`
 REWARDBASE=`grep "REWARDBASE" docker-compose.yml | sed "s/.*REWARDBASE=\(.*\)\'.*/\1/"`
