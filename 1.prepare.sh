@@ -13,20 +13,29 @@ fi
 # Download klaytn docker image.
 docker pull klaytn/klaytn:latest
 
+CURR_PWD=`pwd`
+OUTPUT_DIR=/homi-output
+case "$(uname -sr)" in
+   CYGWIN*|MINGW*|MINGW32*|MSYS*)
+     CURR_PWD=`pwd -W`
+     OUTPUT_DIR=//homi-output
+     ;;
+esac
+
 # Generate docker-compose.yml for docker-compose.
-docker run --rm -v ${PWD}:/homi-output klaytn/klaytn homi setup -o /homi-output --docker-image-id klaytn/klaytn:latest --cn-num $NUM_CNS --chainID $CHAIN_ID --network-id $NETWORK_ID docker
+docker run --rm -v $CURR_PWD:/homi-output klaytn/klaytn homi setup -o $OUTPUT_DIR --docker-image-id klaytn/klaytn:latest --cn-num $NUM_CNS --chainID $CHAIN_ID --network-id $NETWORK_ID docker
 
 # Update private key if necessary
 if [ ! -z $PRIVATE_KEY ]; then
   echo "replacing private key."
-	sed -ie "s/\(.*nodekeyhex \)\(.*\)\(\".*\)/\1$PRIVATE_KEY\3/" docker-compose.yml
-	sed -ie "s/\(.*REWARDBASE=\)\(.*\)\(\'.*\)/\1$ADDRESS\3/" docker-compose.yml
+	sed -i -e "s/\(.*nodekeyhex \)\(.*\)\(\".*\)/\1$PRIVATE_KEY\3/" docker-compose.yml
+	sed -i -e "s/\(.*REWARDBASE=\)\(.*\)\(\'.*\)/\1$ADDRESS\3/" docker-compose.yml
 fi
 
 # add eth namespace in docker-compose.yml
-sed -ie "s/RPC_API=\"db,klay,/RPC_API=\"db,eth,klay,/" docker-compose.yml
-cat docker-compose.yaml
+sed -i -e "s/RPC_API=\"db,klay,/RPC_API=\"db,eth,klay,/" docker-compose.yml
+#cat docker-compose.yml
 # Add the whale account to the node wallet.
 PK=`grep "nodekeyhex" docker-compose.yml | sed "s/.*nodekeyhex \(.*\)\".*/\1/"`
-REWARDBASE=`grep "REWARDBASE" docker-compose.yml | sed "s/.*REWARDBASE=\(.*\)\'.*/\1/"`
-./add_import_key.py docker-compose.yml $PK $REWARDBASE
+REWARDBASE=`grep "REWARDBASE" docker-compose.yml | sed "s/.*REWARDBASE=\(.*\)\'.*/\1/" | sed "s/\('\s>>.*\)//"`
+echo "Execution done"
