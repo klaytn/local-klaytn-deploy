@@ -2,17 +2,18 @@
 
 <!-- vim-markdown-toc GFM -->
 
-* [Deploying the local Network](#deploying-the-local-network)
-	* [Prerequisites](#prerequisites)
-	* [Starting the Klaytn Network](#starting-the-klaytn-network)
-		* [Chainging parameters](#chainging-parameters)
-	* [Checking out the Status of the Network](#checking-out-the-status-of-the-network)
-	* [Getting logs](#getting-logs)
-	* [Stopping the Network](#stopping-the-network)
-	* [Resuming the Network](#resuming-the-network)
-	* [Terminate the Network](#terminate-the-network)
-* [Developing Smart Contracts on the Local Network](#developing-smart-contracts-on-the-local-network)
-	* [Using KlaytnIDE](#using-klaytnide)
+- [Local Deployment Tool for Klaytn](#local-deployment-tool-for-klaytn)
+- [Deploying the local Network](#deploying-the-local-network)
+	- [Prerequisites](#prerequisites)
+	- [Starting the Klaytn Network](#starting-the-klaytn-network)
+		- [Chainging parameters](#chainging-parameters)
+	- [Checking out the Status of the Network](#checking-out-the-status-of-the-network)
+	- [Getting logs](#getting-logs)
+	- [Stopping the Network](#stopping-the-network)
+	- [Resuming the Network](#resuming-the-network)
+	- [Terminate the Network](#terminate-the-network)
+- [Developing Smart Contracts on the Local Network](#developing-smart-contracts-on-the-local-network)
+	- [Using KlaytnIDE](#using-klaytnide)
 
 <!-- vim-markdown-toc -->
 
@@ -23,6 +24,11 @@ Following packages are required.
 
 1. [Docker](https://docs.docker.com/get-docker/)
 1. [Docker-compose](https://docs.docker.com/compose/install/)
+
+```bash
+Note: 
+If your Operation System is Windows, run the below commands from gitbash.
+```
 
 ## Starting the Klaytn Network
 Execute the following scripts:
