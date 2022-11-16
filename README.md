@@ -27,7 +27,7 @@ Following packages are required.
 
 ```bash
 Note: 
-If your Operation System is Windows, run the below commands from gitbash.
+If the Operation System is Windows, please run the below commands from gitbash.
 ```
 
 ## Starting the Klaytn Network
