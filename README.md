@@ -1,19 +1,23 @@
+# Branch name will be changed
+
+We will change the `master` branch to `main` on Dec 15, 2022.
+After the branch policy change, please check your local or forked repository settings.
+
 # Local Deployment Tool for Klaytn
 
 <!-- vim-markdown-toc GFM -->
 
-- [Local Deployment Tool for Klaytn](#local-deployment-tool-for-klaytn)
-- [Deploying the local Network](#deploying-the-local-network)
-	- [Prerequisites](#prerequisites)
-	- [Starting the Klaytn Network](#starting-the-klaytn-network)
-		- [Chainging parameters](#chainging-parameters)
-	- [Checking out the Status of the Network](#checking-out-the-status-of-the-network)
-	- [Getting logs](#getting-logs)
-	- [Stopping the Network](#stopping-the-network)
-	- [Resuming the Network](#resuming-the-network)
-	- [Terminate the Network](#terminate-the-network)
-- [Developing Smart Contracts on the Local Network](#developing-smart-contracts-on-the-local-network)
-	- [Using KlaytnIDE](#using-klaytnide)
+* [Deploying the local Network](#deploying-the-local-network)
+	* [Prerequisites](#prerequisites)
+	* [Starting the Klaytn Network](#starting-the-klaytn-network)
+		* [Chainging parameters](#chainging-parameters)
+	* [Checking out the Status of the Network](#checking-out-the-status-of-the-network)
+	* [Getting logs](#getting-logs)
+	* [Stopping the Network](#stopping-the-network)
+	* [Resuming the Network](#resuming-the-network)
+	* [Terminate the Network](#terminate-the-network)
+* [Developing Smart Contracts on the Local Network](#developing-smart-contracts-on-the-local-network)
+	* [Using KlaytnIDE](#using-klaytnide)
 
 <!-- vim-markdown-toc -->
 
@@ -97,4 +101,3 @@ $ ./7.terminate.sh
 [KlaytnIDE](https://ide.klaytn.com) is an IDE (Integrated Development Environment) for Klaytn.
 By changing Environment on the "Run" tab to "Caver Provider" with `http://localhost:8551`,
 you can easily connect to the local Klaytn network. Enjoy developing!
-
