@@ -29,6 +29,11 @@ Following packages are required.
 1. [Docker](https://docs.docker.com/get-docker/)
 1. [Docker-compose](https://docs.docker.com/compose/install/)
 
+```bash
+Note: 
+If the Operation System is Windows, please run the below commands from gitbash.
+```
+
 ## Starting the Klaytn Network
 Execute the following scripts:
 
@@ -96,4 +101,3 @@ $ ./7.terminate.sh
 [KlaytnIDE](https://ide.klaytn.com) is an IDE (Integrated Development Environment) for Klaytn.
 By changing Environment on the "Run" tab to "Caver Provider" with `http://localhost:8551`,
 you can easily connect to the local Klaytn network. Enjoy developing!
-
